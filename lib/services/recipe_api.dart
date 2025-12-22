@@ -10,7 +10,7 @@ class RecipeApi {
         .from('recipes')
         .select()
         .order('created_at', ascending: false)
-        .timeout(const Duration(milliseconds: 50));
+        .timeout(const Duration(seconds: 10));
 
     final List<dynamic> data = response as List<dynamic>;
     return data.map((json) => Recipe.fromJson(json)).toList();

@@ -18,6 +18,8 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
 
   Future<void> _pickImage() async {
     final file = await ImageHelper.pickImage(ImageSource.gallery);
+    print('DEBUG: Picked file = $file');  // ✅ Debug
+    print('DEBUG: File path = ${file?.path}');  // ✅ Debug
     setState(() {
       _image = file;
     });
@@ -95,7 +97,7 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
                     ? const CircularProgressIndicator()
                     : ElevatedButton(
                         onPressed:
-                            _image != null ? null : () => _upload(context),
+                            _image == null ? null : () => _upload(context),
                         child: const Text('Upload'),
                       );
               },

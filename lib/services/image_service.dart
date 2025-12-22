@@ -11,8 +11,8 @@ class ImageService {
     try {
       final fileName = '${DateTime.now().millisecondsSinceEpoch}.jpg';
       final path = 'uploads/$fileName';
-
-      await _client.storage.from('food_photos_invalid').upload(
+///bug bucker invalid
+      await _client.storage.from('food-photos').upload(
             path,
             imageFile,
             fileOptions: const FileOptions(cacheControl: '3600', upsert: false),
@@ -29,7 +29,7 @@ class ImageService {
 
   Future<void> savePhotoData(String imageUrl, String caption) async {
     await _client.from('food_photos').insert({
-      'image_url': imageUrl,
+      'img_url': imageUrl,
       'caption': caption,
     });
   }

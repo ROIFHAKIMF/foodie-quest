@@ -51,6 +51,7 @@ class RecipeProvider with ChangeNotifier {
     } else {
       _favoriteIds.add(recipeId);
     }
+    notifyListeners();
   }
 
   bool isFavorite(int recipeId) {

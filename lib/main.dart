@@ -40,3 +40,4 @@ class FoodieQuestApp extends StatelessWidget {
     );
   }
 }
+

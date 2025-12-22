@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('FoodieQuest'),
+
         bottom: TabBar(
           controller: _tabController,
           tabs: const [
@@ -102,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen>
                 return const Center(child: Text('No recipes found.'));
               }
               return ListView.builder(
-                itemCount: provider.recipes.length + 1,
+                itemCount: provider.recipes.length,
                 itemBuilder: (context, index) {
                   final recipe = provider.recipes[index];
                   return ListTile(

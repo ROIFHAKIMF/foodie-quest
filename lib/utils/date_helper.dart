@@ -7,6 +7,6 @@ class DateHelper {
   }
 
   static String formatFull(DateTime date) {
-    return DateFormat('yyyy-mm-dd').format(date);
+    return DateFormat('yyyy-MM-dd').format(date);
   }
 }
