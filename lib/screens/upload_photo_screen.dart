@@ -18,8 +18,8 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
 
   Future<void> _pickImage() async {
     final file = await ImageHelper.pickImage(ImageSource.gallery);
-    print('DEBUG: Picked file = $file');  // ✅ Debug
-    print('DEBUG: File path = ${file?.path}');  // ✅ Debug
+    // print('DEBUG: Picked file = $file');  // ✅ Debug
+    // print('DEBUG: File path = ${file?.path}');  // ✅ Debug
     setState(() {
       _image = file;
     });
